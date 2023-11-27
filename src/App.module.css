@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.container__box {
+  width: 100%;
+  max-width: 315px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.65);
+  background-color: #fff;
+}
