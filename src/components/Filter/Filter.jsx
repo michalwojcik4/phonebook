@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useDispatch } from 'react-redux';
-import { setFilter } from 'redux/slices/filterSlices';
+import { setFilter } from 'redux/slices/contacts/filterSlices';
 
 import css from './Filter.module.css';
 

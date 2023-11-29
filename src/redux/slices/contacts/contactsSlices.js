@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, deleteContact, addContact } from '../operations';
+import { fetchContacts, deleteContact, addContact } from './operations';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
