@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import css from './RegistrationForm.module.css';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+
 import { register } from '../../redux/slices/auth/operations';
+
+import css from './RegistrationForm.module.css';
 
 export const RegistrationForm = () => {
   const [nick, setNick] = useState('');
   const [email, setMail] = useState('');
   const [password, setPassword] = useState('');
+
   const dispatch = useDispatch();
 
   const handleChange = e => {

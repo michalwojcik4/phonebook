@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import css from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
+
 import { login } from '../../redux/slices/auth/operations';
+
+import css from './LoginForm.module.css';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const dispatch = useDispatch();
 
   const handleChange = e => {

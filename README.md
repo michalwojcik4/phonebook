@@ -5,13 +5,14 @@ using Redux Toolkit.
 
 ## Features
 
+- User registration and login functionality.
 - Add contacts with names and phone numbers.
 - Delete contacts.
 - Filter contacts by name.
 
 ## Demo
 
-https://michalwojcik4.github.io/goit-react-hw-07-phonebook/
+https://michalwojcik4.github.io/goit-react-hw-08-phonebook/
 
 ## Getting Started
 
@@ -35,6 +36,11 @@ https://michalwojcik4.github.io/goit-react-hw-07-phonebook/
 
 ## How to Use
 
+- User Registration and Login:
+
+  - The application allows new users to register.
+  - Existing users can log in to access the phonebook.
+
 - Add Contact:
 
   - Fill in the name and phone number in the input fields.
@@ -49,14 +55,9 @@ https://michalwojcik4.github.io/goit-react-hw-07-phonebook/
 
 ## Backend Setup
 
-For the backend, this project uses [MockAPI](https://mockapi.io/). Follow these
-steps to set up the backend:
-
-1. Create an account on [MockAPI](https://mockapi.io/) using your GitHub
-   account.
-2. Create a new API with a contacts resource to manage contacts.
-3. Obtain the API endpoint URL and configure it in the project's code
-   (src/api/api.js or relevant files).
+For the backend, this project utilizes
+[connections-api](https://connections-api.herokuapp.com/docs/) to handle user
+authentication and manage contacts.
 
 ## Technologies Used React
 

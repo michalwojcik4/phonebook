@@ -1,14 +1,17 @@
-import { ContactsPage } from 'components/ContactsPage/ContactsPage';
-import { Home } from 'components/Home/Home';
-import { LoginForm } from 'components/LoginForm/LoginForm';
-import PrivateRoute from 'components/PrivateRoute';
-import ProtectedRoute from 'components/ProtectedRoute';
-import { RegistrationForm } from 'components/RegistrationForm/RegistrationForm';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import { me } from 'redux/slices/auth/operations';
 import { selectIsRefreshing } from 'redux/slices/auth/selectors';
+
+import PrivateRoute from 'components/PrivateRoute';
+import ProtectedRoute from 'components/ProtectedRoute';
+import { ContactsPage } from 'components/ContactsPage/ContactsPage';
+import { Home } from 'components/Home/Home';
+import { Loader } from 'components/Loader/Loader';
+import { LoginForm } from 'components/LoginForm/LoginForm';
+import { RegistrationForm } from 'components/RegistrationForm/RegistrationForm';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -18,7 +21,7 @@ export const App = () => {
     dispatch(me());
   }, [dispatch]);
 
-  if (isRefreshing) return <p>loading...</p>;
+  if (isRefreshing) return <Loader />;
 
   return (
     <BrowserRouter basename="/goit-react-hw-08-phonebook">
