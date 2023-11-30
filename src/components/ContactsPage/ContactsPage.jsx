@@ -13,12 +13,13 @@ import {
   fetchContacts,
   addContact,
 } from '../../redux/slices/contacts/operations';
+import { selectUser } from 'redux/slices/auth/selectors';
+import { logout } from '../../redux/slices/auth/operations';
 
 import ContactForm from '../ContactForm/ContactForm';
 import ContactList from '../ContactList/ContactList';
 import { Loader } from '../Loader/Loader';
 import Filter from '../Filter/Filter';
-import User from '../User/User';
 
 import css from './ContactsPage.module.css';
 
@@ -27,6 +28,7 @@ export const ContactsPage = () => {
   const allContacts = useSelector(selectContacts);
   const filteredContacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -48,23 +50,31 @@ export const ContactsPage = () => {
     dispatch(deleteContact(id));
   };
 
+  const handleClick = () => {
+    dispatch(logout());
+  };
+
   return (
-    <div className={css.container}>
-      <div>
-        <User />
+    <div className={css.contacts}>
+      <div className={css.contacts__nav}>
+        <p className={css.contacts__email}>{user.email}</p>
+        <button onClick={handleClick} className={css.contacts__logoutbtn}>
+          Logout
+        </button>
       </div>
-      <div className={css.container__box}>
+      <div className={css.contacts__line}></div>
+      <div className={css.contacts__box}>
         <ContactForm onAddContact={handleAddContact} />
-      </div>
-      <div className={css.container__box}>
-        <Filter />
-        {isLoading && <Loader />}
-        {!isLoading && (
-          <ContactList
-            contacts={filteredContacts}
-            onDeleteContact={handleDeleteContact}
-          />
-        )}
+        <div className={css.contacts__filter}>
+          <Filter />
+          {isLoading && <Loader />}
+          {!isLoading && (
+            <ContactList
+              contacts={filteredContacts}
+              onDeleteContact={handleDeleteContact}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

@@ -14,14 +14,12 @@ const Filter = () => {
   };
 
   return (
-    <div className={css.search}>
-      <input
-        className={css.search__input}
-        type="text"
-        onChange={e => handleFilterChange(e)}
-        placeholder="Search contacts..."
-      />
-    </div>
+    <input
+      className={css.search__input}
+      type="text"
+      onChange={e => handleFilterChange(e)}
+      placeholder="Search contacts..."
+    />
   );
 };
 

@@ -33,42 +33,37 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className={css.container}>
-      <NavLink to="/register">Register</NavLink>
-      <div className={css.container__box}>
+    <div className={css.login}>
+      <nav className={css.login__nav}>
+        <NavLink to="/register" className={css.login__link}>
+          Register
+        </NavLink>
+      </nav>
+      <div className={css.login__line}></div>
+      <div className={css.login__box}>
         <form className={css.form} onSubmit={handleSubmit}>
-          <div className={css.form__side}>
-            <h1 className={css.form__title}>Login</h1>
-          </div>
-          <div className={css.form__side}>
-            <div className={css.form__group}>
-              <input
-                className={css.form__input}
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                required
-                value={email}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={css.form__group}>
-              <input
-                className={css.form__input}
-                type="password"
-                name="password"
-                placeholder="Password"
-                required
-                value={password}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={css.form__group}>
-              <button type="submit" className={css.form__button}>
-                Login
-              </button>
-            </div>
-          </div>
+          <h1 className={css.form__title}>Login</h1>
+          <input
+            className={css.form__input}
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            required
+            value={email}
+            onChange={handleChange}
+          />
+          <input
+            className={css.form__input}
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={handleChange}
+          />
+          <button type="submit" className={css.form__button}>
+            Login
+          </button>
         </form>
       </div>
     </div>

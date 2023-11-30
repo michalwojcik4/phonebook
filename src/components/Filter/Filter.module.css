@@ -1,12 +1,5 @@
-.search {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 10px;
-}
-
 .search__input {
-  width: 100%;
+  width: 95%;
   color: #000;
   font-weight: 300;
   background: transparent;
