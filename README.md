@@ -12,7 +12,7 @@ using Redux Toolkit.
 
 ## Demo
 
-https://michalwojcik4.github.io/goit-react-hw-08-phonebook/
+https://michalwojcik4.github.io/phonebook/
 
 ## Getting Started
 
